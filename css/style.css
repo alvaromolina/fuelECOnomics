@@ -1,0 +1,105 @@
+body {
+  background-color:#white; 
+  margin: 0;
+  color: black; 
+  background-image: url(../img/15139-blue-sky-and-the-road.jpg);
+  background-repeat: no-repeat;
+  background-position:50% 50%;
+  background-size: 100% 100%;
+}
+
+a {
+  color: #E8E8F0;
+}
+legend{
+  color: #FACB47;
+  text-align: center;
+}
+label{
+  color: #E8E8F0;
+  text-align: center;
+}
+
+.banner{
+      background-color:rgba(149,192,51,0.975);    
+      height: 55px;
+}
+.banner1{
+      background-color:rgba(149,192,51,0.80);    
+      height: 5px;
+}
+
+.banner2{
+      background-color:rgba(149,192,51,0.85);    
+      height: 5px;
+}
+
+.banner3{
+      background-color:rgba(149,192,51,0.90);    
+      height: 5px;
+}
+
+.banner4{
+      background-color:rgba(149,192,51,0.95);    
+      height: 5px;
+}
+
+.whitebanner{
+      background-color:rgba(255,255,255,0.85);    
+      height: 10px;
+}
+
+
+
+.span1 , .span2, .span3, .span4, .span5, .span6, .span7, .span8 , .span12{
+    background-color:rgba(80,105,113,0.7);    
+    border-radius: 10px;
+    -ms-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -khtml-border-radius: 10px;
+    /*border:1px solid #FFFFFF;*/
+}
+
+.map{
+    border-radius: 10px;
+    border:3px solid #FFFFFF;
+}
+
+.social-icons {
+padding: 8px 8px;
+}
+
+.label-small {
+  width: 100px;
+
+}
+
+.divtablewrapper {
+  position: relative;
+}
+
+.divtable {
+  display: table;
+}
+.divrow {
+  display: table-row;
+}
+.divcell {
+  display: table-cell;
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  margin-left: 0px;
+  width: 400px;
+}
+.divcell.empty
+{
+  border: none;
+  width: 50px;
+}
+.divcell.rowspanned {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}
