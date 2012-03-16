@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <title>Fuel Economics</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Learn your car fuel effiency and co2 emissions. Play with data! and learn about you can do stop climate change!">
+    <meta name="description" content="Learn your car fuel effiency and co2 emissions. Play with data! and learn what can be donde to stop climate change!">
     <meta name="author" content="alvaromolinac@gmail.com">
     <link rel=”image_src” href=”<?= base_url() ?>img/car.png”/ >
 
