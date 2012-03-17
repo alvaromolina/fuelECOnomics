@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="FuelECOnomics is page to learn and play with data about the economics of fuel consumption and CO2 emissions. Learn and act!">
     <meta name="author" content="alvaromolinac@gmail.com">
+    <meta name="google-site-verification" content="TpLp-0YcoIkc-yGDaNziITZb1lGMAob_w1FcWJrlGhQ" />
     <link rel=”image_src” href=”<?= base_url() ?>img/car.png”/ >
 
     <!-- Le styles -->
