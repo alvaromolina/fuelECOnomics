@@ -386,6 +386,7 @@ function countryChange(){
 
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-26920700-3']);
+  _gaq.push(['_setDomainName', 'fueleconomics.info']);
   _gaq.push(['_trackPageview']);
 
   (function() {
