@@ -79,7 +79,7 @@ $('#co2car<?=$num?>').tooltip({});
     <tr>
       <td colspan="2" style=" color: #E8E8F0;"> Cost to drive 25 <?=$distanceunit?>s :</td> 
       <td colspan="2" style=" color: #FACB47;" nowrap>  <? if($price ==0) { ?> 
-                      <span class="label label-warning">Chose a price</span>       <? } else {?>
+                      <span class="label label-warning">Chose a country for fuel price</span>       <? } else {?>
 
       <?=$cost25?> $us <? } ?></td> 
     </tr>
@@ -92,13 +92,13 @@ $('#co2car<?=$num?>').tooltip({});
     <tr>
       <td colspan="2" style=" color: #E8E8F0;"> Anual fuel cost* :</td>
       <td colspan="2" style=" color: #FACB47;" nowrap> <? if($price ==0) { ?> 
-                     <span class="label label-warning">Chose a price</span>      <? } else { ?>
+                     <span class="label label-warning">Chose a country for fuel price</span>      <? } else { ?>
 
 
                      <?= round($costyear,2)?> $us <? } ?></td> 
     </tr>
     <tr>
-      <td colspan="2" style=" color: #E8E8F0;"> <a href="#co2" id="co2car<?=$num?>" rel="tooltip" title="Click to learn more"> <span class="label label-success" style="font-size: 120%;">Anual CO2 emission**:</span> </a> </td>
+      <td colspan="2" style=" color: #E8E8F0;" nowrap> <a href="#co2" id="co2car<?=$num?>" rel="tooltip" title="Click to learn more"> <span class="label label-success" style="font-size: 120%;">Anual CO2 emission**:</span> </a> </td>
       <td colspan="2" style="color: #FACB47; font-size: 120%;" nowrap> <?=round($co2,2)?> Kgrams</td>
 
     </tr>

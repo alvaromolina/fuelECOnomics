@@ -37,7 +37,7 @@ function makeChange2(){
 }
 function modelChange2(){
     
-    $('#car2').html("");
+    $('#car2').html('<img align="center" src="'+base_url+'img/ajax-loader.gif">');
     if($('#model2').attr('value') != "") {
       $.post(base_url+"car/showCar/2/"+$('#model2').attr('value'), {
         "volumeunit":$("input[name='volumeunit']:checked").val(),"distanceunit":$("input[name='distanceunit']:checked").val(),"price":$("#price").val()

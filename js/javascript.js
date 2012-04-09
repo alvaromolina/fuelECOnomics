@@ -60,7 +60,8 @@ function makeChange(){
 }
 function modelChange(){
     
-    $('#car1').html("");
+    
+    $('#car1').html('<img align="center" src="'+base_url+'img/ajax-loader.gif">');
     $('#compare').addClass('disabled');    
     if($('#model').attr('value') != "") {
       $.post(base_url+"car/showCar/1/"+$('#model').attr('value'), {
@@ -154,6 +155,7 @@ $(document).ready(function(){
       if(!$('#compare').hasClass('disabled')){
         $.post(base_url+"car/compareCar/", {}, function(response){
          $('#comparecar').html(response);
+         location.href="#comparecar";
         });
       }
   });

@@ -30,6 +30,7 @@ $('#changeprice').click(function()
 });
 
 </script>
+
 <hr>
 <div id="countrydata" style="margin-left: auto; margin-right: auto; width:80%;">
 
@@ -42,6 +43,11 @@ $('#changeprice').click(function()
       <?=$country['fuel_price'] ?> </span> $us <span id="action"></span>
       <span id="changeprice" style="cursor: pointer; cursor: hand;" class="label label-info">Change</span> 
       </td>
+    </tr>
+    <tr>
+      <td colspan="2" style=" text-align: center;"> 
+      <a class="btn btn-success" data-toggle="modal" href="#myModal" >Compare prices</a>
+    </td>
     </tr>
     <tr>
     <td colspan="2"  >  
@@ -60,3 +66,26 @@ $('#changeprice').click(function()
 
 
 </div>
+
+<div class="modal hide fade" id="myModal" data-toggle="modal" style="width: 800px; height: 900px;" >
+  <div class="modal-header">
+    <a class="close" data-dismiss="modal">×</a>
+    <h3>Pump price for gasoline (US$ per liter) 2010  </h3>
+  </div>
+  <div class="modal-body">
+     <ul class="nav nav-tabs">
+          <li class="active"><a href="#chart_country" data-toggle="tab" >Chart</a></li>
+          <li><a href="#geo_country" data-toggle="tab">Map</a></li>
+       </ul>
+       <div class="tab-content">
+          <div class="tab-pane active" id="chart_country" style="width: 800px; height: 500px;" ></div>
+          <div class="tab-pane" id="geo_country"></div>
+       </div>
+  </div>
+  <div class="modal-footer">
+ <small style="font-size: 65%; "> *From most current data of <a href="http://data.worldbank.org/indicator/EP.PMP.SGAS.CD" target="_blank" style="color: #08C">World Bank:World Development Indicators</a>  </small> 
+
+  </div>
+</div>
+
+

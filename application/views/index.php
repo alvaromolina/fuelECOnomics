@@ -88,7 +88,10 @@
     "1W"];
 
 
-    google.load('visualization', '1', {packages: ['motionchart','geochart']});    
+    google.load('visualization', '1', {packages: ['motionchart','geochart','corechart']});    
+
+
+
 
     function drawVisualizationgraph() {
         $.getJSON('data.json', function(jsondata) {
@@ -128,16 +131,16 @@
 
           
           $.each(jsondata[1], function(i,item){
-            
             if(jQuery.inArray(item.country.id,aggregates) == -1){
               data.addRow([item.country.value,Number(item.value)]);
               //console.log(item);  
             }            
           });
 
-          data.addRows(1);          
+
+          /*data.addRows(1);          
           data.setValue(0, 0, jsondata[1][0].country.value);
-          data.setValue(0, 1, Number(jsondata[1][0].value));          
+          data.setValue(0, 1, Number(jsondata[1][0].value));*/          
           var geochart = new google.visualization.GeoChart(
             document.getElementById('visualization'));
 
@@ -303,12 +306,82 @@ function computeTotalDistance(result) {
 }
 
 
+
+function drawChartCountry(jsondata,s_country) {
+
+  var data = new google.visualization.DataTable();
+
+  data.addColumn('string', 'Country');
+  data.addColumn('number', 'US$ per liter ');
+  data.addColumn('number', 'US$ per liter '+ s_country );
+  
+
+  $.each(jsondata[1], function(i,item){
+    
+    if(jQuery.inArray(item.country.id,aggregates) == -1 && Number(item.value) > 0 ){
+
+
+
+      if(item.country.value=='Venezuela, RB'){
+        country='Venezuela';
+        if(s_country=='Venezuela, RB') 
+          s_country = 'Venezuela';
+      }
+      else
+        country= item.country.value;
+
+      if(country==s_country)
+        data.addRow([country,Number(item.value),Number(item.value)]);
+      else
+        data.addRow([country,Number(item.value),null]);
+
+
+
+
+      //console.log(item);  
+    }            
+  });
+  
+
+  console.log(data);  
+
+  data.sort([{column: 1}, {column: 0}]);
+  
+  var options = {
+    title: 'Pump price for gasoline (US$ per liter)',
+    chartArea:{width:"600",height:"400"}
+      
+  }; 
+
+  var chart = new google.visualization.ColumnChart(document.getElementById('chart_country'));
+  chart.draw(data, options);
+
+  var geochart = new google.visualization.GeoChart(
+    document.getElementById('geo_country'));
+
+  geochart.draw(data, {});
+  
+
+}
+
+
 function countryChange(){
 
+    $('#fuel_price').html('<img align="center" src="'+base_url+'img/ajax-loader.gif">');   
+    country = $('#country').attr('value');
     $.post(base_url+"index/fuelPrice",  {"country":$('#country').attr('value'), "volumeunit":$("input[name='volumeunit']:checked").val()
 
     }, function(response){
       $('#fuel_price').html(response);
+      //$('#chart_country').html('<img align="center" src="'+base_url+'img/ajax-loader.gif">');
+
+      $.getJSON("http://api.worldbank.org/countries/all/indicators/EP.PMP.SGAS.CD?date=2010&format=jsonp&per_page=250&prefix=?&callback=?", 
+        
+        function(jsondata){
+          drawChartCountry(jsondata, country);
+      });
+
+
     });
 
 
@@ -543,8 +616,8 @@ var WRInitTime=(new Date()).getTime();
                     <input type="text" class="span10" id="to">
                   </div>
                 </div>
-                <input style="margin-left: 20px;" class="btn btn-success" type="button" id="route" value="Trace route >>">
-            </fieldset>
+                <input style="margin-left: 20px;" class="btn btn-success" type="button" id="route" value="Trace route >>"> <br>
+                <img src="<?=base_url()?>img/powered-by-google-on-white.png" >             </fieldset>
           </form>
           <div id="total">  </div>
           <!-- <div id="directionsPanel"></div> -->
@@ -575,7 +648,7 @@ var WRInitTime=(new Date()).getTime();
                           </td>
                         <td> 
           <h3  style=" color: #E8E8F0; "> 
-              There is a scientific consensus that climate change is caused by human activity and the emission of greenhouse gases <a href="http://www.nap.edu/catalog.php?record_id=12782" target="_blank">[1] </a> <a href="http://www.pnas.org/content/early/2009/01/28/0812721106.full.pdf+html"> [2] </a> . Great part of this gasses are CO2 and <a href="http://www.fueleconomy.gov/feg/findacarhelp.shtml#carbonFootprint" target="_blank"> most of the CO2 produced  by a typical household comes from vehicles. </a>
+              There is a scientific consensus that climate change is caused by human activity and the emission of greenhouse gases <a href="http://www.nap.edu/catalog.php?record_id=12782" target="_blank" style="color: #FACB47">[1] </a> <a href="http://www.pnas.org/content/early/2009/01/28/0812721106.full.pdf+html" style="color: #FACB47"> [2] </a> . Great part of this gasses are CO2 and <a href="http://www.fueleconomy.gov/feg/findacarhelp.shtml#carbonFootprint" target="_blank" style="color: #FACB47"> most of the CO2 produced  by a typical household comes from vehicles. </a>
 
 <!-- <a href= > [3][4][5].  -->
                That is why choosing a fuel efficient car is very important, not only for our pockets but also for the enviroment.   <h3>
@@ -585,11 +658,11 @@ var WRInitTime=(new Date()).getTime();
               Also look for alternatives to petro-fuel cars like walking, cycling, take public transportation, car pooling or alternative energy vehicles. <br>
               <hr>
 
-              Be sure to try our <a href="#co2data">tools below</a> to find interesting information about CO2 emmisions, enviroment and the relation with the use of cars and the urban development. <br>
+              Be sure to try our <a href="#co2data" style="color: #FACB47">tools below</a> to find interesting information about CO2 emmisions, enviroment and the relation with the use of cars and the urban development. <br>
               
-              Please <a href="#co2data"> comment below  </a> to share yor insights abou the data presented. <br>
+              Please <a href="#co2data" style="color: #FACB47"> comment below  </a> to share yor insights abou the data presented. <br>
 
-              We will be also posting via our facebook page <fb:like-box href="https://www.facebook.com/pages/FuelECOnomics/303415156392462" width="292" show_faces="false" stream="false" header="false"></fb:like-box> <!-- and our blog -->. Please like us to follow our news.
+              We will be also posting via our facebook page <fb:like-box href="https://www.facebook.com/pages/FuelECOnomics/303415156392462" width="292" show_faces="false" stream="false" header="false"></fb:like-box> <!-- and our blog -->. Like us to follow our news.
                
           </h3>
           </td>
@@ -624,7 +697,6 @@ var WRInitTime=(new Date()).getTime();
                 </ul>
 
                 <div class="tab-content">
-
                   <div class="tab-pane active" id="graphchart">
 
                     <table>
@@ -646,7 +718,6 @@ var WRInitTime=(new Date()).getTime();
                         <td colspan="2">  
                      <small style="font-size: 75%; color: #363737;"> Data from <a href="http://data.worldbank.org/topic" target="_blank">World Bank:World Development Indicators</a> <br>
                           * Total Motor vehicles :  Calculated from = Motor vehicles (per 1,000 people) * Total Population/1000 </small> 
-
                      </td>
                         </tr>
 
@@ -742,9 +813,12 @@ var WRInitTime=(new Date()).getTime();
       <div class="row-fluid">
           <div class="span11"> 
             <hr>
-            <footer>
-                <p>&copy; Fuel Economics 2012</p>
+            <footer style="color: #FACB47;" >
+            <p>&copy; Fuel Economics 2012 <br> <a href="https://wbchallenge.imaginatik.com/wbchallengecomp.nsf/x/competition?open&eid=2011111685257879005955D51068264"> <img style="margin-left: auto;" width="400" src="<?=base_url()?>img/a4cbadge-horz-en.png"> </a>
+                </p>
+                
             </footer>
+ 
           </div>        
       </div>
 
