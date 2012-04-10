@@ -67,7 +67,7 @@ $('#changeprice').click(function()
 
 </div>
 
-<div class="modal hide fade" id="myModal" data-toggle="modal" style="width: 800px; height: 900px;" >
+<div class="modal hide fade" id="myModal" data-toggle="modal" style="width: 900px; height: 900px;" >
   <div class="modal-header">
     <a class="close" data-dismiss="modal">×</a>
     <h3>Pump price for gasoline (US$ per liter) 2010  </h3>
@@ -78,7 +78,7 @@ $('#changeprice').click(function()
           <li><a href="#geo_country" data-toggle="tab">Map</a></li>
        </ul>
        <div class="tab-content">
-          <div class="tab-pane active" id="chart_country" style="width: 800px; height: 500px;" ></div>
+          <div class="tab-pane active" id="chart_country"></div>
           <div class="tab-pane" id="geo_country"></div>
        </div>
   </div>

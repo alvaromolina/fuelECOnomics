@@ -9,7 +9,6 @@
     <meta name="author" content="alvaromolinac@gmail.com">
 <meta name="google-site-verification" content="jpsx0cmWuVnBguUAVUeMKmgQN5-e0cUwKHi8aa3fEuI" />      
 <link rel=”image_src” href=”<?= base_url() ?>img/car.png”/ >
-
     <!-- Le styles -->
     <link href="<?= base_url();?>css/bootstrap.css" rel="stylesheet">
     <link href="<?= base_url();?>css/style.css" rel="stylesheet">
@@ -451,7 +450,7 @@ function countryChange(){
     <![endif]-->
 
     <!-- Le fav and touch icons -->
-    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="shortcut icon" href="http://29.media.tumblr.com/avatar_f03882b35e55_16.png">
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
     <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
     <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
@@ -486,14 +485,32 @@ var WRInitTime=(new Date()).getTime();
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 
-  <div class="whitebanner" style="height: 70px;"> 
+
+    <div class="navbar">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="#">    <img width="60px" style="margin-left: 30px; margin-top: 10px;" src="<?= base_url()?>img/car.png"> 
+    <img width="350px"  height="60" style="margin-top: 10px;"  src="<?= base_url()?>img/logoletters.png">
+</a>
+          <div class="nav-collapse">
+            <ul class="nav pull-right" style="margin-top: 30px;  margin-right: 30px;">
+              <li class="active"><a href="#">Home</a></li>
+              <li ><a href="#learn">Learn</a></li>
+              <li ><a href="#co2data">Explore the data</a></li>
+              <li><a href="http://fueleconomics.tumblr.com/" target="_blank">News</a></li>
     
-    <img width="60px" style="margin-left: 30px; margin-bottom: 20px;  margin-top: 10px;" src="<?= base_url()?>img/car.png"> 
-    <img width="450px"  height="60" style="margin-top: 10px;"  src="<?= base_url()?>img/logoletters.png">
+              <li style="margin-top: -6px; margin-bottom: -10px;"><a  href="https://www.facebook.com/pages/FuelECOnomics/303415156392462" style="padding:0;" target="_blank"><img  width="50px" src="<?= base_url()?>img/facebook.png"></a></li>
+
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
     </div>
-    <div class="banner3">  &nbsp; </div>
-    <div class="banner2">  &nbsp; </div>
-    <div class="banner1">  &nbsp; </div>
 
     <div class="container-fluid">
       <div class="row-fluid">
@@ -635,7 +652,7 @@ var WRInitTime=(new Date()).getTime();
 
 
     
-    <div class="row-fluid">
+    <div class="row-fluid" id="learn">
           <div class="span12"> <h1 style=" color: #FACB47; margin-left: 20px;"> Why CO2 emmisions are important? </h1>    
           <hr>
 
