@@ -290,13 +290,27 @@ function computeTotalDistance(result) {
   else
     combined1 = "";
 
+  if($('#combined2').length!=0)
+    combined2 = $('#combined2').val();
+  else
+    combined2 = "";
+
+  car1 = $("#model option:selected").text();
+  car2 = $("#model2 option:selected").text();
+  year1 = $("#year option:selected").text();
+  year2 = $("#year2 option:selected").text();
+  make1 = $("#make option:selected").text();
+  make2 = $("#make2 option:selected").text();
+
+
+
   if($('#price').length!=0)
     price = $('#price').val();
   else
     price = "";
   
   
-  $.post(base_url+"index/routeData",  {"route":total, "volumeunit":$("input[name='volumeunit']:checked").val(), "distanceunit":$("input[name='distanceunit']:checked").val(),'combined1':combined1,'price':price
+  $.post(base_url+"index/routeData",  {"route":total, "volumeunit":$("input[name='volumeunit']:checked").val(), "distanceunit":$("input[name='distanceunit']:checked").val(),'combined1':combined1,'combined2':combined2,'car1':car1,'car2':car2,'year1':year1,'make1':make1,'year2':year2, 'make2':make2, 'price':price
           }, function(response){
             $('#total').html(response);
           });
@@ -620,7 +634,7 @@ var WRInitTime=(new Date()).getTime();
         <div class="span4">
           <form class="form-horizontal">
             <fieldset>
-              <legend>Trace your route</legend>
+              <legend>Trace your route / CO2 footprint</legend>
                <div class="control-group">
                   <label class="control-label" style="width: 60px;" for="from">From:</label>
                   <div class="controls" style="margin-left: 80px;"> 
@@ -634,10 +648,10 @@ var WRInitTime=(new Date()).getTime();
                   </div>
                 </div>
                 <input style="margin-left: 20px;" class="btn btn-success" type="button" id="route" value="Trace route >>"> <br>
-                <img src="<?=base_url()?>img/powered-by-google-on-white.png" >             </fieldset>
+                <img style="margin-left: 20px;" src="<?=base_url()?>img/powered-by-google-on-white.png" >             
+            </fieldset>
           </form>
           <div id="total">  </div>
-          <!-- <div id="directionsPanel"></div> -->
         </div><!--/span-->
         <div class="span8">
           <div id="map" class="map"></div>

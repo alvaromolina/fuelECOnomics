@@ -39,9 +39,18 @@ class Index extends CI_Controller {
       $distanceunit = $_POST['distanceunit'];
       $route = $_POST['route'];
       $combined1 = $_POST['combined1'];
+      $combined2 = $_POST['combined2'];
+      $car1 = $_POST['car1'];
+      $car2 = $_POST['car2'];
+      $year1 = $_POST['year1'];
+      $year2 = $_POST['year2'];
+      $make1 = $_POST['make1'];
+      $make2 = $_POST['make2'];
+      
+
       $price = $_POST['price'];
       
-      $data = array('route'=>$route,'volumeunit' =>$volumeunit,'distanceunit'=>$distanceunit,'combined1'=>$combined1,'price'=>$price);      
+      $data = array('route'=>$route,'volumeunit' =>$volumeunit,'distanceunit'=>$distanceunit,'combined1'=>$combined1,'combined2'=>$combined2,'car1'=>$car1,'car2'=>$car2, 'year1'=>$year1,'year2'=>$year2, 'make1'=>$make1,'make2'=>$make2,'price'=>$price);      
       $this->load->view('routedata',$data);
 
     }  
