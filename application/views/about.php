@@ -56,8 +56,8 @@
           <div class="nav-collapse">
             <ul class="nav pull-right" style="margin-top: 30px;  margin-right: 30px;">
               <li ><a href="<?=base_url().'index'?>">Home</a></li>
-              <li ><a href="#learn">Learn</a></li>
-              <li ><a href="#co2data">Explore the data</a></li>
+              <li ><a href="<?=base_url().'index'?>#learn">Learn</a></li>
+              <li ><a href="<?=base_url().'index'?>#co2data">Explore the data</a></li>
               <li><a href="http://fueleconomics.tumblr.com/" target="_blank">News</a></li>
               <li class="active"><a href="<?=base_url().'index/about'?>">About</a></li>
               <li style="margin-top: -6px; margin-bottom: -10px;"><a  href="https://www.facebook.com/pages/FuelECOnomics/303415156392462" style="padding:0;" target="_blank"><img  width="50px" src="<?= base_url()?>img/facebook.png"></a></li>
