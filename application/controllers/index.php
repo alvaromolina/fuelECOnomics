@@ -33,6 +33,10 @@ class Index extends CI_Controller {
 
     }    
 
+    function about()
+    {
+      $this->load->view('about');
+    }     
     function routeData()
     {
       $volumeunit = $_POST['volumeunit'];
