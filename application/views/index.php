@@ -4,6 +4,7 @@
   <head>
     <meta charset="utf-8">
     <title>Fuel Economics</title>
+    <meta property="fb:admins" content="615635732" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="FuelECOnomics is page to learn and play with data about the economics of fuel consumption and CO2 emissions. Learn and act!">
     <meta name="author" content="alvaromolinac@gmail.com">
