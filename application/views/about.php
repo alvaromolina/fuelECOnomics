@@ -71,10 +71,12 @@
       <div class="row-fluid">
           <div class="span3" style="background-color: transparent;">&nbsp;</div>
           <div class="span6"> <h1 style="color: white; margin-left: 30px; margin-top: 20px; margin-bottom: 20px;"> Fuel Economics <small style="color: white;">  is web application to raise awareness and inform people that choosing a car with low fuel consumption can help the environment and climate change. It presents beautiful data visualizations so people can be informed about climate change and CO2 emissions. <br>
-          I uses data from <a href="http://data.worldbank.org/topic" target="_blank">World Bank:World Development Indicators</a>
+          It uses data from <a href="http://data.worldbank.org/topic" target="_blank">World Bank:World Development Indicators</a>
 
- and it is participating in the competion Apps for climate <a href="https://wbchallenge.imaginatik.com/wbchallengecomp.nsf/x/competition?open&eid=2011111685257879005955D51068264"> <img style="margin-left: auto;" width="400" src="<?=base_url()?>img/a4cbadge-horz-en.png"> </a> <br>
-          Vote for this application in here: <a style="font-size: 26px; color: #FACB47;" href="https://wbchallenge.imaginatik.com/wbchallengecomp.nsf/x/idea?open&eid=2011111685257879005955D51068264&iid=D4DAE34A3E2E685C852579C3006BA084&es=0"> vote for fueleconomics </a> <br> Fuel economics it is developed by <a href="http://about.me/alvaromolina">Alvaro Molina<a>
+ and was one of the finalists for Apps for climate competion <a href="https://wbchallenge.imaginatik.com/wbchallengecomp.nsf/x/competition?open&eid=2011111685257879005955D51068264"> <img style="margin-left: auto;" width="400" src="<?=base_url()?>img/a4cbadge-horz-en.png"> </a> <br>
+          <a href="http://blogs.worldbank.org/opendata/announcing-the-apps-for-climate-finalists" target="_blank">Finalists</a>
+	   
+	  <br> Fuel economics was developed by <a href="http://about.me/alvaromolina">Alvaro Molina<a>
 
 
  </small>  </h1> 
