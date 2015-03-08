@@ -9,9 +9,10 @@ class Data_m extends CI_Model {
     parent::__construct();
     $this->load->library('mongo_db');
     $this->load->helper('session_helper');   
-    $m = new Mongo(); // connect
-    $this->db = $m->selectDB("green");
-
+    //$m = new Mongo(); // connect
+    //$this->db = $m->selectDB("green");
+    $m = new MongoClient(); // connect
+    $this->db = $m->green;
   }
 
   
