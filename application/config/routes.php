@@ -40,6 +40,7 @@
 
 $route['default_controller'] = "index";
 $route['404_override'] = '';
+$route['index/about'] = 'index/about';
 
 
 /* End of file routes.php */
