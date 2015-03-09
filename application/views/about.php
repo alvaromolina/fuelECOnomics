@@ -15,6 +15,8 @@
     <style type="text/css">
       body {
         padding-bottom: 40px;
+        background-image: url(../img/15139-blue-sky-and-the-road.jpg);
+
       }
       .sidebar-nav {
         padding: 9px 0;
